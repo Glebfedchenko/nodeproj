@@ -1,0 +1,68 @@
+html
+head
+ title Registration
+ link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
+ link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css")
+ link(rel="stylesheet", href="../styles/css/defaultmin.css")
+body
+ .head
+  .container#withborder
+   .col-lg-7.col-md-7.col-sm-7
+    a#logo1(href="/") D
+    a#logo2(href="/") DISPLAY
+   .col-md-5.col-lg-5.col-sm-5.text-right
+    ul
+     li
+      a.social.tw(href='')
+       i.fa.fa-twitter
+     li
+      a.social.fb(href='')
+       i.fa.fa-facebook
+     li
+      a.social.rs(href='')
+       i.fa.fa-rss
+     li
+      a.social.pi(href='')
+       i.fa.fa-pinterest-p
+     li
+      a.social.lin(href='')
+       i.fa.fa-linkedin
+     li
+      a.social.gp(href='')
+       i.fa.fa-google-plus
+     li
+      a.social.dr(href='')
+       i.fa.fa-dribbble
+  .container#withoutborder
+   .col-lg-2.col-md-2.col-sm-2
+    a#homelink(href="/") HOME
+    a#contactlink(href="/contact") CONTACT
+ .greenbar
+  .container
+   .col-lg-7.col-md-6.col-sm-6.col-xs-6
+    h5 GOT A QUESTION OR INQUIRY?    
+ .formsection
+  form.container
+   .text-center
+    h2 Contact Form
+   .row
+    .col-md-3.col-sm-3
+    .col-md-6.col-sm-6
+     .form-group
+      input#name.form-control.input-sm(required='', type='text', placeholder='Name', pattern='^[a-zA-Z]+[ a-zA-Z-_]*$', title='Only English letters allowed')
+     .form-group
+      input#email.form-control.input-sm(required='', type='email', placeholder='Email address', name='email', pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')
+     .form-group
+      input#subject.form-control.input-sm(required='', type='text', placeholder='Subject', pattern='^[a-zA-Z]+[ a-zA-Z-_]*$', title='Only English letters allowed')
+      input#message.form-control(required='', rows='10', pattern='{1,20}' title='Not more than 20 characters')
+      button#formbutton.btn.btn-success(type='submit') SEND MESSAGE
+    .col-md-3.col-sm-3
+ .foot1
+  .container
+   .col-lg-9.col-md-8.col-sm-8#low
+    p#wrights COYWRIGHT 2013 DISPLAY ALL RIGHTS RESERVED
+   .col-lg-3.col-md-4.col-sm-4#low
+    a#wrights(href="/" ) HOME
+    a#wrights(href="#" ) /
+    a#wrights(href="/contact" ) CONTACT  
+
