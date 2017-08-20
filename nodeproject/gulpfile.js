@@ -9,8 +9,8 @@ var changed = require('gulp-changed');
 
 
 
-var SCSS_SRC = './public/styles/scss/**/*.scss';
-var SCSS_DEST = './public/styles/css';
+var SCSS_SRC = './views/styles/scss/**/*.scss';
+var SCSS_DEST = './views/styles/css';
 
 gulp.task('compile_scss', function () {
 

@@ -4,7 +4,7 @@ head
     title #{title}
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css")
-    link(rel='stylesheet', href='../styles/css/defaultmin.css')
+    link(rel='stylesheet', href='./styles/css/defaultmin.css')
 body
  .head
   .container#withborder
@@ -68,8 +68,22 @@ body
     each d in data
       .col-md-4.col-lg-4.col-sm-4.col-xs-4
        .imgcontainer
-        a(href=`/${d.id}`)
-          img.img-responsive(src=d.src, alt="")
+        img.img-responsive(src=d.src, alt="")
+        .overlay
+        #overlayEdit
+          a(href="/edit/"+d.id)
+           img(src="./img/edit.png", alt="")
+        #overlayInfo
+          a(href="/views/"+d.id)
+           img(src="./img/info.png", alt="")
+        #overlayClose
+          a(href="/delete/"+d.id)
+           img(src="./img/close.png", alt="")
+    .col-md-4.col-lg-4.col-sm-4.col-xs-4
+     .imgcontainer#add
+      img.img-responsive#pluscontainer(src='./uploads/001.jpg')
+      a(href="/new")
+        img#plus.img-responsive(src='./img/plus.png', alt="")
  .foot
   .container.text-center
    .col-lg-9.col-md-8.col-sm-8
@@ -86,9 +100,3 @@ body
      a#wrights(href="/" ) HOME
      a#wrights(href="#" ) /
      a#wrights(href="/contact" ) CONTACT
-//- .container
-//-  .col-md-12
-//-   each d in data
-//-    a(href=`/${d.category}`)
-//-     p #{d.category}
-   

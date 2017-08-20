@@ -1,6 +1,14 @@
 const connection = require('../data/connection')
 
-exports.homePage = (req, res) => {
+exports.indexPage = (req, res) => {
+    let all = 'SELECT * FROM projects';
+    const query = connection.query(all, (err, results, fields) => {
+        if (err) throw err;
+            console.log(results)
+            res.redirect('/home');
+    })
+}
+exports.homePage = (req,res) =>{
     let all = 'SELECT * FROM projects';
     const query = connection.query(all, (err, results, fields) => {
         if (err) throw err;
@@ -8,7 +16,6 @@ exports.homePage = (req, res) => {
             res.render('home', { title: 'Node JS App', data:results })
     })
 }
-
 exports.print = (req,res)=>{
     let print = 'SELECT * FROM projects WHERE category = "print"';
     const query = connection.query(print,(err,results,fields)=>{

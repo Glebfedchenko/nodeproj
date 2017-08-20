@@ -7,7 +7,7 @@ head
     link(rel='stylesheet', href='./styles/css/defaultmin.css')
 body
  .head
-  .container#withborder
+  .container#withborder 
    .col-lg-7.col-md-7.col-sm-7
     a#logo1(href="/") D
     a#logo2(href="/") DISPLAY
@@ -64,31 +64,24 @@ body
      li#l2 /
      li
       a#l3(href="/applications") APPLICATIONS
+  form
   .container
    .projectinfo
     .col-md-5.col-sm-6.col-lg-4.col-xs-3    
      each d in data
       img.img-responsive(src=d.src, alt="")
-    .col-md-3.col-sm-5.col-lg-4.col-xs-3
-     each d in data
-      .title
-       p #{d.title}
-      .author
-       ul
-        li
-         i.fa.fa-user
-        li
-         p #{d.author}
-      .date
-       ul
-        li
-         i.fa.fa-calendar
-        li
-         p #{d.date} 
-   .col-md-12.col-sm-12.col-lg-12.col-xs-12
-    .description
-     each d in data
-      p #{d.description}
+    .col-md-3.col-sm-5.col-lg-4.col-xs-3#firstEdit
+      .form-group
+        input#editTitle.form-control(type='text', placeholder='Project title', name = 'product.title')
+      .form-group
+        input#editAuthor.form-control(type='text', placeholder='Author', name = 'product.author')
+      .form-group
+        input#editCategory.form-control(type='text', placeholder='Category', name='product.category') 
+  .container       
+   .col-md-8.col-sm-11.col-lg-8.col-xs-8#secondEdit
+       .form-group
+        input#editDescr.form-control(type='text', name='project.description', placeholder='Description')
+       button.btn.btn-default#postbtn(type='submit') DONE      
  .foot1
   .container
    .col-lg-9.col-md-8.col-sm-8#low

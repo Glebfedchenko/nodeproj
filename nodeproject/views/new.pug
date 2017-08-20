@@ -2,9 +2,10 @@ html(lang="en")
 head
     meta(charset="UTF-8")
     title #{title}
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css")
-    link(rel='stylesheet', href='./styles/css/defaultmin.css')
+    link(rel='stylesheet', href='./styles/css/defaultmin.css')  
+    script(src='./getFname.js')
 body
  .head
   .container#withborder
@@ -41,11 +42,8 @@ body
  .greenbar
   .container
    .col-lg-7.col-md-6.col-sm-6.col-xs-6
-    h5 CHECK OUT OUR WORK    
+    h5 ADD NEW PROJECT    
    .col-md-6.col-lg-5.col-sm-6.col-xs-6
-    input.input-sm#inpt(type='text' placeholder='Username')
-    input.input-sm#inpt(type='text' placeholder='Password')
-    button#greenbarbtn LOG IN
  .portfolio
   .container
    .col-md-12.col-lg-12.col-sm-12
@@ -64,31 +62,27 @@ body
      li#l2 /
      li
       a#l3(href="/applications") APPLICATIONS
-  .container
-   .projectinfo
-    .col-md-5.col-sm-6.col-lg-4.col-xs-3    
-     each d in data
-      img.img-responsive(src=d.src, alt="")
-    .col-md-3.col-sm-5.col-lg-4.col-xs-3
-     each d in data
-      .title
-       p #{d.title}
-      .author
-       ul
-        li
-         i.fa.fa-user
-        li
-         p #{d.author}
-      .date
-       ul
-        li
-         i.fa.fa-calendar
-        li
-         p #{d.date} 
-   .col-md-12.col-sm-12.col-lg-12.col-xs-12
-    .description
-     each d in data
-      p #{d.description}
+   .container
+    form(action='/upload', method='POST', enctype='multipart/form-data')
+      .view_head_add
+        #image_add.file-upload.view_image
+          label
+            input#uploaded-file(type='file', name='recfile', onchange='getFileName ();', required='')
+          #file-name
+        .view_content_add
+          input(type='text', name='title', placeholder='Project title', required='')
+          input(type='text', name='author', placeholder='Project author', required='')
+          input(type='text', name='Category', placeholder='Category', required='')
+      .view_description_add.descr_edit
+        input(type='text', name='Description', placeholder="Description. Enter the data like 'color | text' if you would like the colored description", required='')
+      input.submit_add(type='submit', value='DONE')
+ .foot
+  .container.text-center
+   .col-lg-9.col-md-8.col-sm-8
+    h4 ARE YOU IMPRESSED BY OUR CREATIVITY?
+   .col-lg-3.col-md-4.col-sm-4
+    button#footbutton
+     a(href="/contact") CONTACT US RIGHT NOW
  .foot1
   .container
    .col-lg-9.col-md-8.col-sm-8#low
